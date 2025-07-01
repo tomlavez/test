@@ -38,16 +38,38 @@ O dashboard responde a 5 perguntas principais sobre degradação ambiental:
 - Dados na pasta `tratado/` (estrutura conforme especificada)
 
 ### Instalação
+
+#### Opção 1: Instalação Manual
 ```bash
 # Clone/baixe o projeto
 # Navegue até o diretório do projeto
+
+# Crie um ambiente virtual
+python3 -m venv venv
+
+# Ative o ambiente virtual
+# No Linux/Mac:
+source venv/bin/activate
+# No Windows:
+# venv\Scripts\activate
 
 # Instale as dependências
 pip install -r requirements.txt
 ```
 
+#### Opção 2: Script Automatizado
+```bash
+# Execute o script que configura tudo automaticamente
+chmod +x run_dashboard.sh
+./run_dashboard.sh
+```
+
 ### Execução
 ```bash
+# Ative o ambiente virtual (se não estiver ativo)
+source venv/bin/activate
+
+# Execute o dashboard
 streamlit run dashboard_ambiental.py
 ```
 

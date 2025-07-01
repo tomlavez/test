@@ -10,7 +10,7 @@
 ### Opção 2: Manual
 ```bash
 # Ativar ambiente virtual
-source dashboard_env/bin/activate
+source venv/bin/activate
 
 # Executar dashboard
 streamlit run dashboard_ambiental.py

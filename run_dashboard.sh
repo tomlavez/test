@@ -4,15 +4,19 @@
 echo "🌍 Iniciando Dashboard Ambiental..."
 
 # Verificar se o ambiente virtual existe
-if [ ! -d "dashboard_env" ]; then
+if [ ! -d "venv" ]; then
     echo "Criando ambiente virtual..."
-    python3 -m venv dashboard_env
+    python3 -m venv venv
+fi
+
+# Ativar ambiente virtual e verificar se streamlit está instalado
+echo "Ativando ambiente virtual..."
+source venv/bin/activate
+
+# Verificar se streamlit está instalado
+if ! command -v streamlit &> /dev/null; then
     echo "Instalando dependências..."
-    source dashboard_env/bin/activate
     pip install -r requirements.txt
-else
-    echo "Ativando ambiente virtual..."
-    source dashboard_env/bin/activate
 fi
 
 # Verificar se os dados existem
